@@ -104,6 +104,9 @@ Istio (Service mesh) - https://istio.io
 
 
 
+
+
+
 Maven Commands used in the projec
 ----------------------------------
 Maven Command	Description:
@@ -115,6 +118,10 @@ Maven Command	Description:
 "mvn spring-boot:build-image"	To generate a docker image using Buildpacks. No need of Dockerfile
 
 "mvn compile jib:dockerBuild"	To generate a docker image using Google Jib. No need of Dockerfile
+
+
+
+
 
 
 
@@ -187,6 +194,11 @@ Apache Benchmark command	Description
 
 
 
+
+
+
+
+
 Kubernetes Commands used in the project
 ---------------------------------------
 Kubernetes Command	Description :
@@ -242,8 +254,13 @@ Kubernetes Command	Description :
 
 
 
+
+
+
+
 Helm Commands used in the course
-Helm Command	Description
+--------------------------------
+Helm Command	Description:
 
 "helm create [NAME]"	Create a default chart with the given name
 
