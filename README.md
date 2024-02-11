@@ -177,7 +177,7 @@ Docker Command	Description:
 
 "docker compose start"	To start containers based on given docker compose file
 
-"docker compose down"	To stop the running containers
+"docker compose stop"	To stop the running containers
 
 "docker run -p 3306:3306 --name accountsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=accountsdb -d mysql"	To create a MySQL DB container
 
