@@ -21,4 +21,5 @@ public class AccountsDto {
     @Schema(description = "Eazy Bank branch address", example = "123 NewYork")
     @NotEmpty(message = "BranchAddress can not be a null or empty")
     private String branchAddress;
+
 }

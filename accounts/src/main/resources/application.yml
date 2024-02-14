@@ -16,7 +16,28 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+  profiles:
+    active: "qa"
+
 
   output:
     ansi:
       enabled: always
+
+build:
+  version: "3.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related local APIs"
+  contactDetails:
+    name: "Somen Bag"
+    email: "somenbag@gmail.com"
+  onCallSupport:
+    -(555)555-2345
+    -(555)665-3455
+
+

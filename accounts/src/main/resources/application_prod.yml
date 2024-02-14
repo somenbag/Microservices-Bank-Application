@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related to prod APIs"
+  contactDetails:
+    name: "Abinash Sahu"
+    email: "abinash@gmail.com"
+  onCallSupport:
+    -(555)555-4563
+    -(555)665-4352
