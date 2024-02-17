@@ -1,0 +1,13 @@
+build:
+  version: "3.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related local APIs"
+  contactDetails:
+    name: "Somen Bag"
+    email: "somenbag@gmail.com"
+  onCallSupport:
+    -(555)555-2345
+    -(555)665-3455
+
+

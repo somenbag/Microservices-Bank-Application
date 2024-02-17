@@ -1,0 +1,42 @@
+server:
+  port: 8071
+
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: git
+#    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/somenbag/microservice-config.git"
+          default-label: eazybank
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+#        native:
+#          search-locations: "file:///S:/EazyBytes/configdocuments"
+#          search-locations: "classpath:/config"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+
+
+encrypt:
+  key: "4DEF5GHY6FR56YJU88JYR4"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+#default-label: This specifies the default branch or label to use when accessing the Git repository.
+#timeout: This specifies the timeout (in seconds) for accessing the Git repository.
+#clone-on-start: true (the cloning of the GitHub repository into local system happen during the start-up itself)
+#force-pull: true (would instruct the Spring Cloud Config Server to perform a force pull from the Git repository every time a client requests configuration data, ensuring that clients always receive the latest configuration changes.)

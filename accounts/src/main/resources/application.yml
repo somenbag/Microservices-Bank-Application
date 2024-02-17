@@ -1,6 +1,11 @@
 server:
   port: 8080
+
 spring:
+  application:
+    name: "accounts"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
@@ -17,27 +22,23 @@ spring:
     properties:
       hibernate.format_sql: true
   config:
-    import:
-      - "application_qa.yml"
-      - "application_prod.yml"
-  profiles:
-    active: "qa"
-
+    import: "optional:configserver:http://localhost:8071"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
   output:
     ansi:
       enabled: always
 
-build:
-  version: "3.0"
-
-accounts:
-  message: "Welcome to EazyBank accounts related local APIs"
-  contactDetails:
-    name: "Somen Bag"
-    email: "somenbag@gmail.com"
-  onCallSupport:
-    -(555)555-2345
-    -(555)665-3455
+# enable and expose all management endpoints supported by spring boot actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
+# establish a connection or link between microservices and the message queue by providing the connection details of the rabbitmq

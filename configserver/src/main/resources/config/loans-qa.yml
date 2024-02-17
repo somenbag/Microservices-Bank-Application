@@ -1,13 +1,8 @@
-spring:
-  config:
-    activate:
-      on-profile: "qa"
-
 build:
   version: "2.0"
 
-accounts:
-  message: "Welcome to EazyBank accounts related to qa APIs"
+loans:
+  message: "Welcome to EazyBank loans related to qa APIs"
   contactDetails:
     name: "Arijit bhunia"
     email: "arijit@gmail.com"

@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related to qa APIs"
+  contactDetails:
+    name: "Arijit bhunia"
+    email: "arijit@gmail.com"
+  onCallSupport:
+    -(555)555-1324
+    -(555)665-5467
