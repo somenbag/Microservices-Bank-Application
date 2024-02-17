@@ -280,3 +280,43 @@ Helm Command	Description:
 
 "helm list"	Lists all of the helm releases inside a K8s cluster
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WebHook configure:
+------------------
+
+ IN POWERSHELL EXECUTE FOLLOWING COMMANDS TO INSTALL SCOOP
+ ---------------------------------------------------------
+ step1: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+ step2:  irm get.scoop.sh | iex
+
+ 
+ 
+ INSTALL THE HOOKDECK CLI ON YOUR DEVICE
+ ----------------------------------------
+ step1: scoop bucket add hookdeck https://github.com/hookdeck/scoop-hookdeck-cli.git
+ 
+ step2: scoop install hookdeck
+
+
+ 
+ LOGIN AND START THE CLI WITH THOSE COMMANDS
+ --------------------------------------------
+ step1: hookdeck login --cli-key 0atd9zcl7am4rogmx9jlhm158ovjlqmca2hixhxseb45fw2in5
+ 
+ step2: hookdeck listen [port] Source       (provide configserver port)
