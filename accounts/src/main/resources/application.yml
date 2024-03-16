@@ -23,6 +23,10 @@ spring:
       hibernate.format_sql: true
   config:
     import: "optional:configserver:http://localhost:8071"
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
   output:
     ansi:
@@ -74,5 +78,34 @@ logging:
     com:
       eazybytes:
         accounts: DEBUG
+#circuitbreaker pattern properties
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000
+
+#retry pattern properties
+resilience4j.retry:
+  configs:
+    default:
+      maxAttempts: 3
+      waitDuration: 100
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      ignoreExceptions:
+        - java.lang.NullPointerException
+      retryExceptions:
+        - java.util.concurrent.TimeoutException
+
+#rate limiter properties
+resilience4j.ratelimiter:
+  configs:
+    default:
+      timeoutDuration: 1000
+      limitRefreshPeriod: 5000
+      limitForPeriod: 1
 
 # establish a connection or link between microservices and the message queue by providing the connection details of the rabbitmq

@@ -9,7 +9,15 @@ spring:
         locator:
           enabled: false
           lower-case-service-id: true
-
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
   output:
     ansi:
       enabled: always
@@ -38,3 +46,22 @@ logging:
     com:
       eazybytes:
         gatewayserver: DEBUG
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000
+
+
+#  slidingWindowSize: 10 (This parameter defines the number of calls that are considered for calculating the failure rate and success rate.
+#  In this case, it's set to 10, meaning the circuit breaker will consider the last 10 calls).
+
+#permittedNumberOfCallsInHalfOpenState: 2 (This parameter sets the number of calls permitted in the half-open state)
+
+#failureRateThreshold: 50 (This parameter defines the threshold for the failure rate above which the circuit breaker will open.
+#It's set to 50, meaning if more than 50% of the calls fail within the sliding window, the circuit breaker will open).
+
+#waitDurationInOpenState: 10000 (This parameter defines the duration for which the circuit breaker remains open before transitioning to the half-open state.)

@@ -95,7 +95,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>sbag1993/${project.artifactId}:s9</image>
+						<image>sbag1993/${project.artifactId}:s10</image>
 					</to>
 				</configuration>
 			</plugin>
